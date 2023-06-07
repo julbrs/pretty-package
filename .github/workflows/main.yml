@@ -5,9 +5,11 @@ permissions:
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   build:
@@ -31,8 +33,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          branch: gh-pages
           folder: build
-          clean: true # Automatically remove deleted files from the deploy branch
-
